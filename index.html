@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+PhishGuard AI
+</title>
+
+
+<link rel="stylesheet" href="/static/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+🛡️ PhishGuard AI
+</h1>
+
+
+<h3>
+AI Email Threat Detection
+</h3>
+
+
+<form method="POST" action="/predict">
+
+
+<textarea
+name="email"
+placeholder="Paste email here">
+</textarea>
+
+
+<br><br>
+
+
+<button>
+Scan Email
+</button>
+
+
+</form>
+
+
+
+<h2>
+{{prediction}}
+</h2>
+
+
+<h3>
+Risk Score: {{confidence}}%
+</h3>
+
+
+
+<h3>
+Detection Reasons:
+</h3>
+
+
+<ul>
+
+{% for r in reasons %}
+
+<li>{{r}}</li>
+
+{% endfor %}
+
+</ul>
+
+
+
+</body>
+
+</html>
